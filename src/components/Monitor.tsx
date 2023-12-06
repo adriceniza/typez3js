@@ -1,8 +1,6 @@
 import {useLoader, useThree} from '@react-three/fiber'
-import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader'
-import * as THREE from "three";
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
 import gsap from "gsap";
-import {clamp} from "@/utils/math";
 import {useEffect, useRef} from "react";
 import {Html} from "@react-three/drei";
 
@@ -13,7 +11,7 @@ export default function Monitor() {
     const {pointer} = useThree();
 
     const monitorAnimation = () => {
-        gsap.fromTo(monitorRef.current["scale"], {
+        monitorRef.current && gsap.fromTo(monitorRef.current["scale"], {
             x: 0,
             y: 0,
             z: 0
@@ -24,7 +22,7 @@ export default function Monitor() {
             z: 2,
             ease: 'power2.out'
         });
-        gsap.fromTo(monitorRef.current["rotation"], {
+        monitorRef.current && gsap.fromTo(monitorRef.current["rotation"], {
             y: 0
         }, {
             duration: 2.2,

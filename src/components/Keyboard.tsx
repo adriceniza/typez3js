@@ -1,7 +1,6 @@
 import {useLoader, useFrame, useThree} from '@react-three/fiber'
-import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader'
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
 import {useRef} from "react";
-import {Float} from "@react-three/drei";
 import gsap from "gsap";
 import {clamp} from "@/utils/math";
 
@@ -18,7 +17,7 @@ export default function Keyboard() {
     const SPEED = 0.8
 
     const updateKeyboardPosition = () => {
-        gsap.to(keyboardRef.current["rotation"], {
+        keyboardRef.current && gsap.to(keyboardRef.current["rotation"], {
             duration: 2.2,
             x: clamp(pointer.y * -1 * SPEED, 0.3, 0.5),
             y: clamp(initialKeyboardRotationState.y + pointer.x * SPEED, 2.9, 3.4),
