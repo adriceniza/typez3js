@@ -58,7 +58,7 @@ export default function Monitor() {
                     rotation={[0, -(Math.PI * 0.5), 0]}
                 >
                     <iframe
-                        src={"https://typez.dev"}/>
+                        src={"https://www.typez.dev"}/>
                 </Html>
             </primitive>
         </>
