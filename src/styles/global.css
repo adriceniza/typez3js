@@ -10,5 +10,14 @@ body,
 }
 
 canvas {
+    touch-action: none;
     background-color: #0c0c0c;
+}
+
+.htmlScreen iframe {
+    width: 1580px;
+    height: 960px;
+    border-radius: 20px;
+    background: black;
+    border: none;
 }
