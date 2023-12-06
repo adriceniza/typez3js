@@ -42,24 +42,25 @@ export default function Monitor() {
             delay: 2.2
         });
     }, [])
-
     return (
-        <primitive object={monitor.scene}
-                   position={[0, 1.3, 0]}
-                   ref={monitorRef}
-                   rotation={[0, Math.PI * 0.5, 0]}
-                   scale={[2, 2, 2]}
-        >
-            <Html
-                transform
-                wrapperClass={"htmlScreen"}
-                distanceFactor={0.9}
-                position={[0, 0.03, 0]}
-                rotation={[0, -(Math.PI * 0.5), 0]}
+        <>
+            <primitive object={monitor.scene}
+                       position={[0, 1.3, 0]}
+                       ref={monitorRef}
+                       rotation={[0, Math.PI * 1.8, 0]}
+                       scale={[2, 2, 2]}
             >
-                <iframe
-                    src={"https://10fastfingers.com/typing-test/english"}/>
-            </Html>
-        </primitive>
+                <Html
+                    transform
+                    wrapperClass={"htmlScreen"}
+                    distanceFactor={0.9}
+                    position={[0, 0.03, 0]}
+                    rotation={[0, -(Math.PI * 0.5), 0]}
+                >
+                    <iframe
+                        src={"https://typez.dev"}/>
+                </Html>
+            </primitive>
+        </>
     )
 }
